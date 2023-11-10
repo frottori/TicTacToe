@@ -62,6 +62,7 @@ function checkWinner(draw){
     if(equals3(board[0][i],board[1][i],board[2][i])){
       winner = board[0][i];
       if(draw == true){
+        stroke(255, 0, 0);
         let x = h * i + h/2;
         let y = w/2;
         line (x,y,x,5*y); 
@@ -74,14 +75,19 @@ function checkWinner(draw){
   // 1st diagonal check
   if(equals3(board[0][0],board[1][1],board[2][2])){
     winner = board[0][0];
-    if(draw == true)
+    if(draw == true){
+      stroke(255, 0, 0);
       line (h/2,w/2,x,y); 
+    }
+    
   }
   // 2nd diagonal check
   if(equals3(board[0][2],board[1][1],board [2][0])){
     winner = board[0][2];
-    if (draw == true)
+    if (draw == true){
+      stroke(255, 0, 0);
       line (x,w/2,h/2,y); 
+    }
   }
   // calculations of open spots so i know if it's a tie
   let openSpots = 0;
