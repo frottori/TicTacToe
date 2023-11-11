@@ -44,7 +44,7 @@ function equals3(a,b,c){
 // checks and draws winner's move
 function checkWinner(draw){
   let winner = null;
-
+  r = w/4; //for the line to be a little longer
   // horizontal check
   for(let i = 0 ; i < 3;i++){
     if(equals3(board[i][0],board[i][1],board[i][2])){
@@ -53,7 +53,7 @@ function checkWinner(draw){
         stroke(255, 0, 0); // red stroke for who wins
         let x = h/2;
         let y = w * i + w/2;
-        line (x, y,5*x,y); 
+        line (x - r, y,5*x + r,y); 
       }
     }
   }
@@ -65,7 +65,7 @@ function checkWinner(draw){
         stroke(255, 0, 0);
         let x = h * i + h/2;
         let y = w/2;
-        line (x,y,x,5*y); 
+        line (x,y - r,x,5*y + r); 
       }
     }
   }
@@ -75,11 +75,10 @@ function checkWinner(draw){
   // 1st diagonal check
   if(equals3(board[0][0],board[1][1],board[2][2])){
     winner = board[0][0];
-    if(draw == true){
+    if(draw == true) {
       stroke(255, 0, 0);
-      line (h/2,w/2,x,y); 
+      line (h/2,w/2,x,y);
     }
-    
   }
   // 2nd diagonal check
   if(equals3(board[0][2],board[1][1],board [2][0])){
