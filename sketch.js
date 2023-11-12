@@ -44,7 +44,7 @@ function equals3(a,b,c){
 // checks and draws winner's move
 function checkWinner(draw){
   let winner = null;
-  r = w/4; //for the line to be a little longer
+  r = 2*w/5; //for the line to be a little longer
   // horizontal check
   for(let i = 0 ; i < 3;i++){
     if(equals3(board[i][0],board[i][1],board[i][2])){
@@ -69,7 +69,7 @@ function checkWinner(draw){
       }
     }
   }
-
+ 
   let x = h*2 + h/2;
   let y = w*2 + w/2;
   // 1st diagonal check
@@ -77,7 +77,7 @@ function checkWinner(draw){
     winner = board[0][0];
     if(draw == true) {
       stroke(255, 0, 0);
-      line (h/2,w/2,x,y);
+      line (h/2 - r,w/2 - r,x + r,y + r);
     }
   }
   // 2nd diagonal check
@@ -85,7 +85,7 @@ function checkWinner(draw){
     winner = board[0][2];
     if (draw == true){
       stroke(255, 0, 0);
-      line (x,w/2,h/2,y); 
+      line (x + r,w/2 - r,h/2 - r,y + r); 
     }
   }
   // calculations of open spots so i know if it's a tie
