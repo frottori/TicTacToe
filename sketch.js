@@ -113,7 +113,8 @@ function checkWinner(draw){
 }
 
 function draw() {
-  background(255);
+
+  background(255); 
   strokeWeight(4);
 
   stroke(0);
